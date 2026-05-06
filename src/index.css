@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ───────────────────────────────────────────────────── */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    @apply text-slate-800 bg-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #f1f5f9; }
+  ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────── */
+@layer utilities {
+
+  .text-gradient {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 60%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #92650a 0%, #ca8a04 50%, #b45309 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-light {
+    background: linear-gradient(135deg, #93c5fd 0%, #ffffff 60%, #bfdbfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-pattern {
+    background-color: #060f1e;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 10% 40%, rgba(30, 64, 175, 0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 90% 10%, rgba(37, 99, 235, 0.10) 0%, transparent 60%),
+      linear-gradient(170deg, #060f1e 0%, #0c1a35 60%, #0a1628 100%);
+  }
+
+  .bg-mesh {
+    background-color: #f8fafc;
+    background-image:
+      radial-gradient(at 20% 30%, rgba(219, 234, 254, 0.5) 0px, transparent 50%),
+      radial-gradient(at 80% 70%, rgba(224, 242, 254, 0.35) 0px, transparent 50%);
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal, .section-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.visible, .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-d1 { transition-delay: 0.07s; }
+  .reveal-d2 { transition-delay: 0.14s; }
+  .reveal-d3 { transition-delay: 0.21s; }
+  .reveal-d4 { transition-delay: 0.28s; }
+  .reveal-d5 { transition-delay: 0.35s; }
+  .reveal-d6 { transition-delay: 0.42s; }
+  .reveal-d7 { transition-delay: 0.49s; }
+  .reveal-d8 { transition-delay: 0.56s; }
+
+  /* ── Cards ── */
+  .card-hover {
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.10);
+  }
+
+  .expertise-card {
+    @apply bg-white rounded-2xl p-7 border border-slate-100 card-hover;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.045);
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-semibold
+           px-6 py-3 rounded-xl transition-all duration-200
+           inline-flex items-center justify-center gap-2
+           shadow-md hover:shadow-lg hover:shadow-blue-500/25;
+  }
+
+  .btn-ghost {
+    @apply border border-white/25 hover:border-white/50 text-white/85 hover:text-white
+           hover:bg-white/10 font-semibold px-6 py-3 rounded-xl
+           transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    @apply text-white font-semibold px-6 py-3 rounded-xl
+           transition-all duration-200 inline-flex items-center justify-center gap-2
+           shadow-md hover:shadow-green-500/25 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* ── Section atoms ── */
+  .section-label {
+    @apply text-blue-600 font-bold text-[11px] tracking-[0.18em] uppercase mb-3 block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4;
+    letter-spacing: -0.02em;
+  }
+
+  .divider-line {
+    @apply w-14 h-[3px] bg-blue-600 rounded-full mb-6;
+  }
+
+  /* ── Forms ── */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200
+           text-sm text-slate-800 placeholder:text-slate-400 bg-white
+           focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-50
+           transition-all duration-150;
+  }
+  .form-input.has-error {
+    @apply border-red-400 ring-2 ring-red-50;
+  }
+  .form-label {
+    @apply block text-[11px] font-bold text-slate-500 mb-1.5 tracking-[0.12em] uppercase;
+  }
+  .form-error-msg {
+    @apply text-red-500 text-[11px] mt-1;
+  }
+
+  /* ── Glass ── */
+  .glass {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.13);
+  }
+
+  /* ── Floating ── */
+  .float-a { animation: floatA 6s ease-in-out infinite; }
+  .float-b { animation: floatA 7s ease-in-out infinite 1.5s; }
+  .float-c { animation: floatA 5s ease-in-out infinite 3s; }
+
+  /* ── WhatsApp pulse ring ── */
+  .wa-ring {
+    position: relative;
+  }
+  .wa-ring::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.3);
+    animation: waPulse 2.2s ease-out infinite;
+  }
+
+  /* ── Nav link hover bar ── */
+  .nav-link {
+    @apply relative text-sm font-medium transition-colors duration-200;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 2px;
+    background: #3b82f6;
+    border-radius: 2px;
+    transition: width 0.22s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+
+  /* ── Mobile bottom safe area ── */
+  .pb-safe { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────── */
+@keyframes floatA {
+  0%, 100% { transform: translateY(0)   rotate(0deg); }
+  40%      { transform: translateY(-9px) rotate(0.6deg); }
+  70%      { transform: translateY(-4px) rotate(-0.4deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes waPulse {
+  0%  { transform: scale(1);   opacity: 0.6; }
+  70% { transform: scale(1.7); opacity: 0;   }
+  100%{ transform: scale(1.7); opacity: 0;   }
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(28px); filter: blur(3px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0.72); opacity: 0; }
+  65%  { transform: scale(1.04); }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Entrance animation classes ── */
+.hero-1 { animation: heroIn 0.72s cubic-bezier(0.22,1,0.36,1) 0.04s both; }
+.hero-2 { animation: heroIn 0.72s cubic-bezier(0.22,1,0.36,1) 0.17s both; }
+.hero-3 { animation: heroIn 0.72s cubic-bezier(0.22,1,0.36,1) 0.30s both; }
+.hero-4 { animation: heroIn 0.72s cubic-bezier(0.22,1,0.36,1) 0.44s both; }
+.hero-5 { animation: heroIn 0.72s cubic-bezier(0.22,1,0.36,1) 0.57s both; }
+.hero-img{ animation: heroIn 0.90s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
+.pop-1  { animation: popIn  0.50s cubic-bezier(0.22,1,0.36,1) 0.85s both; }
+.pop-2  { animation: popIn  0.50s cubic-bezier(0.22,1,0.36,1) 1.05s both; }
+.pop-3  { animation: popIn  0.50s cubic-bezier(0.22,1,0.36,1) 1.25s both; }
+
+/* ── Accordion open ── */
+details[open] > div { animation: fadeUp 0.28s ease-out; }

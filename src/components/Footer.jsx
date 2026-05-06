@@ -177,9 +177,9 @@ const Footer = memo(function Footer() {
           <p className="text-slate-600 text-center md:text-left">
             © {year} {DOCTOR.name} · {CLINIC.name} · All rights reserved.
           </p>
-          <p className="text-slate-700 flex items-center gap-1.5">
+          {/* <p className="text-slate-700 flex items-center gap-1.5">
             Built with <Heart size={10} className="text-red-600/50" fill="currentColor" /> for better oral health in Hyderabad
-          </p>
+          </p> */}
           <p className="text-slate-700 text-center md:text-right max-w-xs">
             Informational purposes only. Consult Dr. Arvind directly for medical advice.
           </p>

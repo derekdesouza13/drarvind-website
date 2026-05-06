@@ -1,5 +1,6 @@
 import { CheckCircle, GraduationCap, Briefcase, Heart } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import aboutImg from '../assets/doctor-clinic.webp'
 
 const credentials = [
   { icon: <GraduationCap size={18} className="text-blue-600" />, title: 'BDS & MDS', sub: 'Kamineni Institute of Dental Sciences' },
@@ -29,12 +30,11 @@ export default function About() {
             <div className="relative">
               {/* Main image placeholder */}
               <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900 to-slate-700 aspect-[4/5] flex items-center justify-center shadow-2xl">
-                <div className="text-center text-white/50 p-8">
-                  <div className="w-32 h-32 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-4xl font-bold font-display text-white/60">BA</span>
-                  </div>
-                  <div className="text-sm">[Professional Photo of Dr. B Arvind]</div>
-                </div>
+               <img
+  src={aboutImg}
+  alt="Dr. Arvind at Dhriti Dental Clinic"
+  className="w-full h-full object-cover"
+/>
               </div>
 
               {/* Floating card */}

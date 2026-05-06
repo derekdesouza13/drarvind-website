@@ -2,6 +2,7 @@ import { Award, Star, Shield, ChevronDown, CheckCircle, Calendar, MapPin, Gradua
 import { WhatsAppIcon } from '../components/WhatsAppIcon'
 import { waUrl, DOCTOR, CLINIC } from '../config/clinic'
 import { trackWhatsAppClick, trackCallClick } from '../lib/emailService'
+import heroImg from '../assets/doctor-hero.webp'
 
 const TRUST_ITEMS = [
   { icon: <Award size={15} />,         label: `${DOCTOR.experience} Years Experience` },
@@ -151,23 +152,17 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-800 to-slate-900" />
 
               {/* Photo placeholder */}
-              <div className="relative z-20 h-full flex flex-col items-center justify-center p-8" aria-hidden="true">
-                <div className="w-28 h-28 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center mb-4 shadow-xl">
-                  <span className="text-4xl font-bold font-display text-white/60">{DOCTOR.initials}</span>
-                </div>
-                <p className="text-white/40 text-sm font-medium text-center">
-                  Professional Portrait — {DOCTOR.name}
-                </p>
-                <p className="text-white/20 text-xs text-center mt-1">
-                  Replace with high-resolution doctor photo (min 800×1000 px)
-                </p>
-              </div>
+             <img
+  src={heroImg}
+  alt={`Portrait of ${DOCTOR.name}`}
+  className="relative z-20 w-full h-full object-cover"
+/>
 
               {/* Name card overlay */}
               <div className="absolute bottom-0 left-0 right-0 z-30 p-5">
                 <div className="glass rounded-2xl p-4">
-                  <p className="text-white font-bold text-lg font-display leading-tight">{DOCTOR.name}</p>
-                  <p className="text-blue-300 text-xs font-medium mt-0.5">
+                  <p className="text-black font-bold text-lg font-display leading-tight">{DOCTOR.name}</p>
+                  <p className="text-slate-800 text-xs font-medium mt-0.5">
                     MDS · RCS London Fellow · {DOCTOR.hospital.name}, Hyderabad
                   </p>
                   <div className="flex gap-2 mt-3" aria-label="Qualifications">
@@ -183,7 +178,7 @@ export default function Hero() {
             </div>
 
             {/* Floating badges — hidden on small screens to avoid overflow */}
-            <div className="absolute -left-5 top-14 pop-1 hidden md:block" aria-hidden="true">
+            <div className="absolute top-4 left-4 z-40 pop-1" aria-hidden="true">
               <div className="cred-badge flex items-center gap-3 pr-4 bg-white">
                 <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Shield size={18} className="text-blue-600" />

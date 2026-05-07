@@ -153,12 +153,15 @@ export default function Clinic() {
               <div
                 className="rounded-2xl overflow-hidden bg-slate-200 aspect-video flex items-center justify-center mb-6"
                 role="img"
-                aria-label={`${b.label} clinic photo`}
+                aria-label={`${b.label} clinic map`}
               >
-                <div className="text-center text-slate-400" aria-hidden="true">
-                  <MapPin size={28} className="mx-auto mb-1.5 opacity-50" />
-                  <p className="text-xs font-medium">{b.label} — Clinic Photo</p>
-                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2938.5199812872143!2d78.30590347377228!3d17.473800100312697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93454fa319c7%3A0x3f89b5781693c697!2sDhriti%20Dental!5e1!3m2!1sen!2sin!4v1778085521470!5m2!1sen!2sin"
+                  className="w-full h-full border-0"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
 
               {/* Contact info */}

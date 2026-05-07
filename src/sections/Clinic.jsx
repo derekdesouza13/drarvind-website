@@ -84,9 +84,9 @@ export default function Clinic() {
               aria-label={`${CLINIC.name} clinic interior`}
             >
               <div className="text-center text-slate-400 p-8" aria-hidden="true">
-                <div className="text-5xl mb-3">🏥</div>
+                <div className="text-5xl mb-3"></div>
                 <p className="font-medium text-slate-500 text-sm">{CLINIC.name} — Clinic Interior</p>
-                <p className="text-slate-400 text-xs mt-1">Replace with real clinic photo</p>
+                <p className="text-slate-400 text-xs mt-1"></p>
               </div>
             </div>
           </div>
@@ -130,9 +130,8 @@ export default function Clinic() {
           {Object.values(CLINIC.branches).map((b, i) => (
             <div
               key={b.id}
-              className={`section-reveal rounded-3xl p-8 border-2 ${
-                b.isPrimary ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white'
-              }`}
+              className={`section-reveal rounded-3xl p-8 border-2 ${b.isPrimary ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white'
+                }`}
               style={{ transitionDelay: `${i * 0.1}s` }}
               aria-label={`${b.label} branch details`}
             >

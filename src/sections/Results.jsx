@@ -54,11 +54,11 @@ export default function Results() {
               {/* Image placeholders */}
               <div className="grid grid-cols-2">
                 <div className="aspect-square bg-slate-300 flex flex-col items-center justify-center p-3 text-center border-r border-white">
-                  <div className="text-2xl mb-1">📷</div>
+                  <div className="text-2xl mb-1"></div>
                   <div className="text-slate-500 text-xs font-medium">Before</div>
                 </div>
                 <div className="aspect-square bg-slate-200 flex flex-col items-center justify-center p-3 text-center">
-                  <div className="text-2xl mb-1">✨</div>
+                  <div className="text-2xl mb-1"></div>
                   <div className="text-slate-500 text-xs font-medium">After</div>
                 </div>
               </div>
